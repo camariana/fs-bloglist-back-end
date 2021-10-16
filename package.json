@@ -1,0 +1,35 @@
+{
+  "name": "fs-bloglist-back-end",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "babel src --out-dir dist",
+    "dev": "nodemon --exec yarn restart",
+    "restart": "rimraf dist && yarn build && yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camariana/fs-bloglist-back-end.git"
+  },
+  "author": "A Camariana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camariana/fs-bloglist-back-end/issues"
+  },
+  "homepage": "https://github.com/camariana/fs-bloglist-back-end#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.13",
+    "rimraf": "^3.0.2"
+  }
+}
