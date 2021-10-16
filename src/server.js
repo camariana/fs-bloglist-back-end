@@ -23,8 +23,15 @@ app.get('/api/notes', (request, response) => {
 app.use(unknownEndpoint)
 app.use(errorHandler)
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`)
-})
+export const start = async () => {
+  try {
+    await connect()
+    app.listen(port, () => {
+      info(`REST API on http://localhost:${port}/api`)
+    })
+  } catch (error) {
+    _error('error connecting to database:', error.message)
+  }
+}
 
 export default app

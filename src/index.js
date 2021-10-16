@@ -1,1 +1,2 @@
-import app from './server'
+import { start } from './server'
+start()
