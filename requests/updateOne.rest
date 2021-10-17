@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/blog/616b7f54830aa3bd0bdc1a29 HTTP/1.1
+content-type: application/json
+#Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGUzNzk5YzBiNDc5ODZiZjEyMjJiYSIsImVtYWlsIjoiY2FtYXJpYW5hQGdjLmVkdS5nbSIsImlhdCI6MTYyODMyMTY4OSwiZXhwIjoxNjI4MzI1Mjg5fQ.eR97e-jC5cbEMU6Ihwa8FLlmpoA-AUopYTvCnlDKd1E
+
+{
+  
+}
