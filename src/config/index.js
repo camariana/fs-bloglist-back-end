@@ -2,9 +2,10 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const env = process.env.NODE_ENV
+
 export const port = process.env.PORT
-export const JWT_SECRET = process.env.JWT_SECRET
-export const JWT_EXPIRE = process.env.JWT_EXPIRE
+export const jwtSecret = process.env.JWT_SECRET
+export const jwtExpires = process.env.JWT_EXPIRE
 
 export let dbUrl = ''
 

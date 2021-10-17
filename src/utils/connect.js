@@ -1,4 +1,4 @@
-import { dbUrl } from './config'
+import { dbUrl } from '../config'
 import mongoose from 'mongoose'
 
 const connect = (url = dbUrl ) => {

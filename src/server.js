@@ -1,12 +1,15 @@
 import { port } from './config'
 import connect from './utils/connect'
 import express, { json } from 'express'
-const app = express()
 import cors from 'cors'
 import morgan from 'morgan'
 
 import { unknownEndpoint, errorHandler, requestLogger } from './utils/middleware'
 import { info, error as _error } from './utils/logger'
+
+import blogRouter from './resources/blog/blog.router'
+
+const app = express()
 
 app.use(cors())
 app.use(json())
@@ -19,6 +22,8 @@ let notes = [  {    id: 1,    content: 'HTML is easy',    date: '2019-05-30T17:3
 app.get('/api/notes', (request, response) => {
   response.json(notes)
 })
+
+app.use('/api/blog', blogRouter)
 
 app.use(unknownEndpoint)
 app.use(errorHandler)
