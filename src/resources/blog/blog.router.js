@@ -6,14 +6,14 @@ const router = Router()
 // /api/blog
 router
   .route('/')
-  .get(controller.getAll)
+  .get(controller.readAll)
   .post(controller.createOne)
 
 // /api/blog/:id
-// router
-//   .route('/:id')
-//   .get(controller.getOne)
-//   .put(controller.updateOne)
-//   .delete(controller.removeOne)
+router
+  .route('/:id')
+  .get(controller.readOne)
+  .put(controller.updateOne)
+  .delete(controller.deleteOne)
 
 export default router
