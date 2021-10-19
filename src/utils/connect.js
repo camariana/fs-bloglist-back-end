@@ -1,9 +1,11 @@
 import { dbUrl } from '../config'
 import mongoose from 'mongoose'
 
-const connect = (url = dbUrl ) => {
+console.log(dbUrl) //TODO remove this
+
+const connect = () => {
   return mongoose.connect(
-    url,
+    dbUrl,
     {
       useNewUrlParser: true
     }
