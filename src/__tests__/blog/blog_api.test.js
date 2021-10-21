@@ -116,7 +116,17 @@ describe('Reading Blog', () => {
 
 describe('Updating Blog', () => {
   test('a blog can be updated', async () => {
+    const blogsAtStart = await blogsInDb()
 
+    const blogToUpdate = blogsAtStart[0]
+
+    await api
+      .put(`/api/blog/${blogToUpdate.id}`)
+      .expect(200)
+
+    const blogsAtEnd = await blogsInDb()
+
+    expect(blogsAtEnd).not.toEqual(blogToUpdate)
   })
 })
 
