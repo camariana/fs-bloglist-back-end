@@ -1,4 +1,5 @@
 import { Blog } from '../resources/blog/blog.model'
+import { User } from '../resources/user/user.model'
 
 export const initialBlogs = [
   {
@@ -25,4 +26,9 @@ export const nonExistingId = async () => {
 export const blogsInDb = async () => {
   const blogs = await  Blog.find({})
   return blogs.map(blog => blog.toJSON())
+}
+
+export const usersInDb = async () => {
+  const users = await  User.find({})
+  return users.map(user => user.toJSON())
 }
