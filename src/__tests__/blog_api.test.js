@@ -1,9 +1,9 @@
 import mongoose from 'mongoose'
 import supertest from 'supertest'
-import { Blog } from '../../resources/blog/blog.model'
-import { initialBlogs, nonExistingId, blogsInDb } from '../../utils/test_helper'
+import { Blog } from '../resources/blog/blog.model'
+import { initialBlogs, nonExistingId, blogsInDb } from '../utils/test_helper'
 
-import app from '../../server'
+import app from '../server'
 const api = supertest(app)
 
 
