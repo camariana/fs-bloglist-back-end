@@ -9,6 +9,8 @@ import { unknownEndpoint, errorHandler, requestLogger } from './utils/middleware
 import { info, error as _error } from './utils/logger'
 
 import blogRouter from './resources/blog/blog.router'
+import userRouter from './resources/user/user.router'
+import commentRouter from './resources/comment/comment.router'
 
 const app = express()
 connect() //TODO remove this after doing the tests
@@ -20,6 +22,8 @@ app.use(morgan('dev'))
 app.use(requestLogger)
 
 app.use('/api/blog', blogRouter)
+app.use('/api/comment', commentRouter)
+app.use('/user', userRouter)
 
 app.use(unknownEndpoint)
 app.use(errorHandler)
