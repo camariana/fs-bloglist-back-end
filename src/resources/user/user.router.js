@@ -1,13 +1,12 @@
 import { Router } from 'express'
-import { createOne, readAll } from './user.controller'
+import controller from './user.controller'
 
 const router = Router()
 
-// /api/blog
+// /user
 router
-  .post('/', createOne)
-  .get('/', readAll)
-
-
+  .route('/')
+  .get(controller.readAll)
+  .post(controller.createOne)
 
 export default router
