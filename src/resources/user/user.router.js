@@ -3,7 +3,7 @@ import controller from './user.controller'
 
 const router = Router()
 
-// /user
+// /api/user
 router
   .route('/')
   .get(controller.readAll)
