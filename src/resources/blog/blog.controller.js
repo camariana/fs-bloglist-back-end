@@ -1,11 +1,14 @@
 import { Blog } from './blog.model'
 import { User } from '../user/user.model'
+import { userExtractor } from '../../utils/auth'
 
 export const createOne = (model) => async (request, response) => {
   const body = request.body
-  const user = await User.findById(body.userId)
+  const userObj = request.user
 
-  console.log(user);
+  const user = await User.findById(userObj.id)
+
+  console.log(user)
 
   const blog = await model
     .create({ ...body, createdBy: user._id })
