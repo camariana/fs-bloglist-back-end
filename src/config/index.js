@@ -10,19 +10,3 @@ export const jwtExpires = process.env.JWT_EXPIRE
 export const dbUrl = env === 'test'
   ? process.env.TEST_MONGODB_URI
   : process.env.MONGODB_URI
-
-// let dbUrl
-// switch (env) {
-// case 'development':
-//   dbUrl = process.env.MONGODB_URI
-//   break
-
-// case 'test':
-//   dbUrl = process.env.TEST_MONGODB_URI
-//   break
-
-// default:
-//   dbUrl = process.env.LIVE_MONGODB_URI
-// }
-
-// export default  dbUrl
