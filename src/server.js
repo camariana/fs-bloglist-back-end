@@ -18,15 +18,14 @@ const app = express()
 connect() //TODO remove this after doing the tests
 
 app.use(cors())
-app.use(express.json())
+app.use(json())
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 
 app.use(requestLogger)
 app.use(tokenExtractor)
 
 
-app.use('/api/blog', blogRouter)
-app.use('/api/comment', commentRouter)
+app.use('/api/blog', blogRouter, commentRouter)
 app.use('/api/user', userRouter)
 
 app.post('/login', login)

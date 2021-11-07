@@ -3,12 +3,18 @@ import { Blog } from '../blog/blog.model'
 
 export const createOne = (model) => async (request, response) => {
   const body = request.body
-  const blog = await Blog.findById(body.blog)
+  const blogID = request.params.id
 
-  console.log(blog);
+  if (body.content === undefined) {
+    return response.status(400).json({
+      error: 'content missing'
+    })
+  }
+
+  const blog = await Blog.findById(blogID)
 
   const comment = await model
-    .create({ ...body, blog: blog._id })
+    .create({ ...body })
 
   blog.comments = blog.comments.concat(comment._id)
   await blog.save()
@@ -18,10 +24,6 @@ export const createOne = (model) => async (request, response) => {
 
 const crudControllers = model => ({
   createOne: createOne(model),
-  // readAll: readAll(model),
-  // readOne: readOne(model),
-  // updateOne: updateOne(model),
-  // deleteOne: deleteOne(model),
 })
 
 

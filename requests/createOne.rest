@@ -6,24 +6,40 @@ content-type: application/json
   "title": "Which jobs help people the most?",
   "author": "Benjamin Todd",
   "url": "https://80000hours.org/career-guide/high-impact-jobs/#approach-1-earning-to-give",
-  "likes": 100
+  "likes": 100,
+  "userId": "617826538ea1abb01e3dab6e"
 }
 
 ###
-POST http://localhost:3001/signup HTTP/1.1
+POST http://localhost:3001/api/blog/617dcfc1befb128d9ed07701/comment HTTP/1.1
 content-type: application/json
 
 {
-  "email": "peace@camariana.gm",
-  "password": "secrete"
+  "content": "haven't read this yet"
+}
+
+###
+POST http://localhost:3001/api/user HTTP/1.1
+content-type: application/json
+
+# {
+#   "username": "camariana",
+#   "password": "secrete",
+#   "name": "A Camariana"
+# }
+
+{
+  "username": "mluukkai",
+  "password": "salainen",
+  "name": "Matti Luukkainen"
 }
 
 
 ###
-POST http://localhost:3001/signin HTTP/1.1
+POST http://localhost:3001/login HTTP/1.1
 content-type: application/json
 
 {
-  "email": "peace@camariana.gm",
+  "username": "camariana",
   "password": "secrete"
 }
